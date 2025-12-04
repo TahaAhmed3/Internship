@@ -6,7 +6,7 @@ public class Inventory {
     private final HashMap<String, Integer> inventory = new HashMap<>();
     
 
-    public void addItem(String item, int quantity) throws InventoryException.DuplicateItemException {
+    public void addItem(String item, int quantity) {
         if (quantity < 0) {
             throw new IllegalArgumentException("Quantity cannot be negative: " + quantity);
         }
@@ -22,7 +22,7 @@ public class Inventory {
     }
 
 
-    public void updateQuantity(String item, int quantity) throws InventoryException.ItemNotFoundException {
+    public void updateQuantity(String item, int quantity) {
         if (!inventory.containsKey(item)) {
             throw new InventoryException.ItemNotFoundException();
         }
@@ -30,7 +30,7 @@ public class Inventory {
     }
 
 
-    public int getQuantity(String item) throws InventoryException.ItemNotFoundException {
+    public int getQuantity(String item) {
         if (!inventory.containsKey(item)) {
             throw new InventoryException.ItemNotFoundException();
         }

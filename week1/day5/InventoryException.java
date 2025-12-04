@@ -1,7 +1,33 @@
 
-public class InventoryException extends Exception {
+public class InventoryException extends RuntimeException {
+    public InventoryException() {
+        super();
+    }
 
-    public static class ItemNotFoundException extends InventoryException {}
+    public InventoryException(String message) {
+        super(message);
+    }
 
-    public static class DuplicateItemException extends InventoryException {}
+
+    public static class ItemNotFoundException extends InventoryException {
+        public ItemNotFoundException() {
+            super();
+        }
+
+        public ItemNotFoundException(String message) {
+            super(message);
+        }
+    }
+
+
+    public static class DuplicateItemException extends InventoryException {
+        public DuplicateItemException() {
+            super();
+        }
+
+        public DuplicateItemException(String message) {
+            super(message);
+        }
+    }
+    
 }
